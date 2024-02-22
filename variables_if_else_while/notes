@@ -1,0 +1,9 @@
+#Notes for review
+
+In exercise 1. The last digit
+
+// Assigns the remainder of dividing 'n' by 10 to 'lastDigit'.
+// This operation extracts the last digit of the number 'n'.
+// Note: Using 'lastDigit = abs(n % 10);' ensures the last digit is always positive,
+// which is useful when the sign of 'n' is irrelevant. However, if 'n' is negative
+// and the sign of the last digit must be retained, 'abs()' should not be used.
