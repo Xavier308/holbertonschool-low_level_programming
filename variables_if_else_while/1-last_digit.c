@@ -15,7 +15,13 @@ int lastDigit;
 
 srand(time(0));
 n = rand() - RAND_MAX / 2;
-lastDigit = abs(n % 10); /* abs(n % 10)) is used for manage negative numbers */
+lastDigit = n % 10;
+/**
+ * Assigns the remainder of dividing 'n' by 10 to 'lastDigit',
+ * effectively extracting the last digit of the number.
+ * If abs(n % 10)) is used, it will not display (negatives) 
+ *abs() is used for manage negative numbers
+ */
 
 /* Snippet of code for evaluate lastDigit of n */
 if (lastDigit > 5)
