@@ -11,32 +11,26 @@
 int main(void)
 {
 int n;
-int lastDigit;
+int last_n;
 
 srand(time(0));
 n = rand() - RAND_MAX / 2;
-lastDigit = n % 10;
-/**
- * Assigns the remainder of dividing 'n' by 10 to 'lastDigit',
- * effectively extracting the last digit of the number.
- * If abs(n % 10)) is used, it will not display (negatives) 
- *abs() is used for manage negative numbers
- */
+last_n = n % 10;
 
 /* Snippet of code for evaluate lastDigit of n */
-if (lastDigit > 5)
+if (last_n > 5)
 {
-printf("Last digit of %d is %d and is greater than 5\n", n, lastDigit);
+printf("Last digit of %d is %d and is greater than 5\n", n, last_n);
 }
 
-else if (lastDigit == 0)
+else if (last_n == 0)
 {
-printf("Last digit of %d is %d and is 0\n", n, lastDigit);
+printf("Last digit of %d is %d and is 0\n", n, last_n);
 }
 
 else
 {
-printf("Last digit of %d is %d and is less than 6 and is not 0\n", n, lastDigit);
+printf("Last digit of %d is %d and is less than 6 and is not 0\n", n, last_n);
 }
 
 return (0);
