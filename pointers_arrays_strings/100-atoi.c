@@ -2,46 +2,38 @@
 
 /**
  * _atoi - convert a string to an integer.
- * @s: char array string
- * Description: Numbers in the string can be preceded by an infinite number
- * of characters. You need to take into account all the - and + signs
- * before the number. If there are no numbers in the string, the function
- * must return 0. Not allowed to use long, new variables of “type” array,
- * nor hard-code special values.
- * Return: first integer found in string
+ * @s: The string to be converted.
+ *
+ * Description: This function converts the initial portion of the string
+ * pointed by s to int representation. It handles optional leading whitespace
+ * and plus/minus signs. It stops converting when it encounters
+ * a non-digit character.
+ *
+ * Return: The int converted from the string.
  */
 int _atoi(char *s)
 {
-	int i = 0;
-	int sign = 1;
 	int result = 0;
-	int has_number = 0;
+	int sign = 1;
+	int i = 0;
 
-	while (s[i] != '\0')
+	while (s[i] != '\0' && (s[i] < '0' || s[i] > '9'))
 	{
-
-		if (s[i] == '-')
+		if (s[i] == '-') /* Flip the sign on every '-' character */
 		{
-		sign *= -1;
-		}
-
-		else if (s[i] >= '0' && s[i] <= '9')
-		{
-			has_number = 1;
-			result = result * 10 + (s[i] - '0');
-
-
-			if (s[i + 1] < '0' || s[i + 1] > '9')
-			{
-				break;
-			}
+			sign *= -1;
 		}
 		i++;
 	}
 
+	/* Convert the number */
+	while (s[i] >= '0' && s[i] <= '9')
+	{
+		/* Convert char to int and add to result  */
+		result = result * 10 + (s[i] - '0');
+		i++;
+	}
 
-	result *= sign;
-
-
-	return (has_number ? result : 0);
+	return (sign * result); /* Apply the sign */
 }
+
