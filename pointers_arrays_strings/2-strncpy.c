@@ -5,7 +5,7 @@
  * using at most an inputted number of bytes.
  * If the length of the source string is less than the maximum byte number,
  * the remainder of the destination string is filled with null bytes.
- * Works exactly like strncpy.
+ * Works exactly like "s.trncpy".
  * @dest: The buffer storing the string copy.
  * @src: The source string.
  * @n: The maximum number of bytes copied.
