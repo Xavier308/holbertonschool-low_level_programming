@@ -1,12 +1,12 @@
 #include "3-calc.h"
 #include <stdlib.h>
 #include <string.h>
-
 /**
  * get_op_func - Selects the correct function to perform the operation
- * asked by the user.
+ * asked by the user based on the operator given as an argument.
  * @s: The operator passed as an argument.
- * Return: Pointer to the function that corresponds to the operator.
+ * Return: Pointer to the function that corresponds to the operator,
+ * or NULL if no matching operator is found.
  */
 int (*get_op_func(char *s))(int, int)
 {
@@ -20,22 +20,14 @@ int (*get_op_func(char *s))(int, int)
 	};
 	int i = 0;
 
-	/* Check if the operator is a single character */
-	if (strlen(s) != 1)
-	{
-		return (NULL);
-	}
-
 	while (ops[i].op != NULL)
 	{
-		if (*s == *ops[i].op)
+		if (*s == *ops[i].op && strlen(s) == 1)
 		{
 			return (ops[i].f);
 		}
 		i++;
 	}
-
-	/* If reached here, no valid operator was found */
 	return (NULL);
 }
 
