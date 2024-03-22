@@ -3,12 +3,12 @@
 #include <stdio.h>
 
 /**
- * print_numbers - imprime números seguidos de un salto de línea
- * @separator: el string a imprimir entre números
- * @n: la cantidad de enteros pasados a la función
+ * print_numbers - prints numbers followed by a newline
+ * @separator: the string to print between numbers
+ * @n: the number of integers passed to the function
  *
- * Description: Si el separador es NULL, no se imprime.
- * Se imprime un salto de línea al final de la función.
+ * Description: If the separator is NULL, it is not printed.
+ * A newline is printed at the end of the function.
  */
 void print_numbers(const char *separator, const unsigned int n, ...)
 {
