@@ -25,7 +25,7 @@ typedef struct list_s
     unsigned int len;
     struct list_s *next;
 } list_t;
-c```
+```
 
 ## Tasks
 
