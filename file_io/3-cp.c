@@ -1,6 +1,9 @@
 #include "main.h"
-#include <unistd.h>
-#include <fcntl.h>
+#include <stdio.h>    /* For dprintf */
+#include <stdlib.h>   /* For exit */
+#include <unistd.h>   /* For read, write, close */
+#include <fcntl.h>    /* For open */
+
 
 #define BUF_SIZE 1024
 
