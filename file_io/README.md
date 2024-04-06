@@ -52,7 +52,7 @@ Compile your code with:
 ```bash
 gcc -Wall -pedantic -Werror -Wextra -std=gnu89 *.c -o [executable_name]
 ```
-# Usagei
+# Usage
 
 To run the compiled programs, use:
 
