@@ -2,6 +2,20 @@
 #include <string.h>
 
 /**
+ * _strlen - Calculate the length of a string.
+ * @str: The string to measure.
+ *
+ * Return: The length of the string.
+ */
+unsigned int _strlen(const char *str)
+{
+	unsigned int length = 0;
+		while (str[length])
+			length++;
+	return (length);
+}
+
+/**
  * add_node_end - Adds a new node at the end of a list_t list.
  * @head: A double pointer to the head of the list_t list.
  * @str: The string to be duplicated into the new node.
@@ -28,7 +42,7 @@ list_t *add_node_end(list_t **head, const char *str)
 
 	/* Initialize the new node */
 	new_node->str = duplicate_str;
-	new_node->len = strlen(duplicate_str);
+	new_node->len = _strlen(duplicate_str);
 	new_node->next = NULL;
 
 	/* If the list is empty, set the new node as the head */
