@@ -47,13 +47,8 @@ int main(int argc, char *argv[])
 
 	copy_content(fd_from, fd_to, argv[1], argv[2]);
 
-	/* Close source file descriptor, print error if failed */
-	if (close_file(fd_from) == -1)
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_from);
-
-	/* Close destination file descriptor, print error if failed */
-	if (close_file(fd_to) == -1)
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd_to);
+	close_file(fd_from);
+	close_file(fd_to);
 
 	return (0);
 }
@@ -91,19 +86,20 @@ void copy_content(int fd_from, int fd_to,
 }
 
 /**
- * close_file - Closes a file descriptor.
+ * close_file - Closes a file descriptor and checks for errors.
  * @fd: The file descriptor to close.
  *
  * Return: 0 on success, -1 on failure, prints error message on failure.
  */
 int close_file(int fd)
 {
-	if (close(fd) == -1)
+	int status = close(fd);
+
+	if (status == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
-		return (-1);
+		exit(100); /* Ensure to exit with code 100 as per project requirements */
 	}
-
-	return (0);
+	return (status);
 }
 
