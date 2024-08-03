@@ -9,12 +9,6 @@ This project focuses on dynamic memory allocation in C programming using `malloc
 ## Implementer
 - **Xavier J. Cruz**
 
-## Project Weight
-- 1
-
-## Project Level
-- Master
-
 ## Key Concepts
 1. **Dynamic Memory Allocation**: Understanding the difference between automatic and dynamic allocation.
 2. **malloc and free**: Learning how to use these functions for memory management.
