@@ -68,3 +68,5 @@ A specific example of how to compile the project (if needed), including any flag
 ```bash
 gcc -Wall -pedantic -Werror -Wextra *.c -o [executable_name]
 ```
+
+
