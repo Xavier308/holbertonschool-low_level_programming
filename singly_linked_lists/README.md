@@ -40,3 +40,6 @@ typedef struct list_s
 
 Holberton School for providing the project guidelines and learning objectives.
 
+
+
+
